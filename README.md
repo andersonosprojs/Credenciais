@@ -2,7 +2,7 @@
 Gerenciador de credenciais
 
 ## Objetivo:
-O objetivo deste projeto didático. Com ele pude aplicar diversas tecnologias, praticar e aprimorar diversos conhecimentos.
+O objetivo deste projeto é didático. Com ele pude aplicar diversas tecnologias; praticar e aprimorar diversos conhecimentos. Feito do zero, com base nos conhecimentos já adiquiridos e pesquisas para utilizar novos recursos e tecnologias.
 
 ## Skills:
 * Angular
