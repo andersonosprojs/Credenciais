@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <span>
+    <button mat-button routerLink="/" class="btn-font-size">
+      <mat-icon style="font-size: 30px; width: auto; height: auto;">verified_user</mat-icon>
+      {{ titulo }}
+    </button>
+  </span>
+  
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon style="font-size: 30px; width: 30px; height: 30px;">account_circle</mat-icon>
+    </button>    
+  </div>
+</mat-toolbar>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+  <app-lista-credenciais fxFlex="100"></app-lista-credenciais>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngIf="token != undefined && token != null" (click)="alterarSenha()">
+    <mat-icon class="color-font-default">edit</mat-icon>
+    <span class="color-font-default">Alterar Senha</span>
+  </button>
+  <button mat-menu-item *ngIf="token != undefined && token != null" (click)="excluirUsuario()">
+    <mat-icon class="color-font-default">delete_forever</mat-icon>
+    <span class="color-font-default">Excluir Usuário</span>
+  </button>
+  <button mat-menu-item *ngIf="token != undefined && token != null" (click)="logout()">
+    <mat-icon class="color-font-default">exit_to_app</mat-icon>
+    <span class="color-font-default">Sair</span>
+  </button>
+</mat-menu>
+

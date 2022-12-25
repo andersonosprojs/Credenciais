@@ -1,0 +1,130 @@
+<div *ngIf="cadastroAtivo" fxLayout="column" fxLayoutAlign="start none">
+  <app-credencial [credencial]="credencial" (evFecharCadastro)="onFecharCadastro($event)"></app-credencial>
+</div>
+
+
+<div *ngIf="!cadastroAtivo" class="content-padding-container" fxLayout="column" fxLayoutAlign="start none">
+  <div class="list">
+    <div class="list-header">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2px">
+        <div class="list-name">
+          Pesquisar
+        </div>
+
+        <div fxFlex="90" class="container" style="-webkit-text-fill-color: #3f51b5">
+          <mat-form-field class="box">
+            <mat-label style="font-size: 14px;">
+              <mat-icon class="icon-pesquisar" aria-hidden="true">search</mat-icon>
+            </mat-label>
+
+            <input
+              matInput
+              autocomplete="off"
+              (keyup)="filtrar($event)"
+              placeholder="Digite qualquer coisa para pesquisar..."
+              #input
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <!-- routerLink="credencial/novo" -->
+          <a
+            mat-mini-fab
+            class="button"
+            matTooltip="Adicionar"
+            style="justify-content: center; margin-top: 10px;"
+            (click)="ativarCadastro()"
+          >
+            <mat-icon aria-hidden="true">add</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <table mat-table matSort  style="width: 100%;" [dataSource]="dataSource" [hidden] = "dataSource.data.length === 0">
+
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Título</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.titulo }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="login">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Login</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.login }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="senha">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Senha</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.senha }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="assinatura">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Assinatura</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.assinatura }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="agencia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Agência</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.agencia }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="conta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Conta</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.conta }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="pix">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="color-text-default">Pix</th>
+        <td mat-cell *matCellDef="let element" class="color-text-default">{{ element.pix }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef class="color-text-default">Ações</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            [matMenuTriggerData]="{evento:element}"
+            [matMenuTriggerFor]="menu"
+            class="color-text-default"
+            aria-label="Example icon-button with a menu"
+          >
+            <mat-icon aria-hidden="true" class="color-text-default">more_horiz</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <div *ngIf="dataSource.data.length == 0" class="message-info" fxLayout="row" fxLayoutAlign="start">
+      <div [style.marginTop]="'30px'" fxFlex="100" [style.textAlign]="'center'" [style.Color]="'white'">
+        Nenhum registro encontrado
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <app-paginator
+    [hidden] = "dataSource.data.length === 0"
+    [length]="dataSource.data.length"
+    [pageSize]="pagesize"
+    (exportarPaginator)="receberPaginator($event)"
+    (exportarSort)="receberSort($event)"
+  ></app-paginator> -->
+
+  <!-- <mat-divider style="box-shadow: 0px 1px 1.5px rgb(51, 51, 51)"></mat-divider> -->
+
+  <mat-menu #menu="matMenu">
+    <ng-template matMenuContent let-evento="evento">
+      <button mat-menu-item (click)="alterar(evento)">
+        <mat-icon class="color-text-default">edit</mat-icon>
+        <span class="color-text-default">Alterar</span>
+      </button>
+      <button mat-menu-item (click)="excluir(evento)">
+        <mat-icon class="color-text-default">delete</mat-icon>
+        <span class="color-text-default">Excluir</span>
+      </button>
+    </ng-template>
+  </mat-menu>
+</div>

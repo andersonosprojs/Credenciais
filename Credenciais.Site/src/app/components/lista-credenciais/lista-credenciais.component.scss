@@ -1,0 +1,86 @@
+.container {
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+
+.box {
+    width: 98%;
+    margin-top: 20px;
+}
+
+.icon-pesquisar {
+    font-size: 22px !important; color: black;
+    color: #3f51b5 !important;
+}
+
+.color-text-default {
+    color: #3f51b5 !important;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: red;
+    background-color: #29b92d;
+}
+
+/* Botões */
+.button {
+    background-color: white !important;
+    color: #3f51b5;
+}
+
+/* Conteúdo de lista */
+.circle {
+    font-size:14px;
+    margin-top: 12px;
+    border-radius: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+/* Conteúdo de Pesquisa */
+.content-padding-container {
+    margin: 40px;
+    border-style: solid;
+    border-color: #3f51b5;
+    border-radius: 8px;
+}
+
+.list {
+    background-color: #3f51b5; 
+    color: white;
+    padding: 2px;
+}
+
+.list-header {
+    background: var(--theme-app-bar);
+    padding-left: 24px;
+    padding-right: 24px;
+    border-bottom: 1pxsolidrgba(0,0,0,.12);
+}
+
+.list-name {
+    font-size: 1.283rem;
+    color: var(--font-primary);
+    padding-right: 24px;
+    padding-top: 12px;
+    font: 500 20px/32px Roboto,"Helvetica Neue",sans-serif !important;
+}
+
+.message-info {
+    font-size: 1.283rem;
+    color: #002041;
+    padding-right: 24px;
+    padding-top: 12px;
+    font: 500 14px/32px Roboto,"Helvetica Neue",sans-serif !important;
+    margin-top: 15px;
+    display: inline !important;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+

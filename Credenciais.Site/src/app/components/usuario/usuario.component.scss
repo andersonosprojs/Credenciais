@@ -1,0 +1,116 @@
+.login-wrapper {
+    height: 93%;
+}
+  
+.login-wrapper .example-form {
+    min-width: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+  
+.login-wrapper .example-full-width,
+.login-wrapper {
+    width: 100%;
+}
+  
+.icon-header {
+    color: #3f51b5; 
+    font-size: 50px; 
+    height: 60px; 
+    width: 60px; 
+    position: relative; 
+    left: -25px;
+}
+  
+.title-header {
+    color: #3f51b5; 
+    font-size: 25px; 
+    height: 60px; 
+    width: 100px; 
+    position: relative; 
+    top: -25px; 
+    left: -20px;
+}
+  
+.btn-redefinir {
+    padding: 20px;
+    font-size: 18px;
+    background-color: #3f51b5;
+    color: white !important;
+    width: 92%;
+    justify-content: center;
+}
+  
+.btn-redefinir:hover {
+    background-color:#727dbd;
+}
+
+.align-center {
+    margin: 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+}
+  
+  .login-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+  }
+  
+  .login-wrapper  mat-card-title {
+    font-size: 30px;
+  }
+  
+  .login-wrapper .mat-card {
+    padding: 40px 70px 50px;
+  }
+  
+  .login-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 54px;
+    background: #FFF7FA;
+  }
+  
+  .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.8375em 0;
+  }
+  
+  .box {
+    position: relative;
+    top: 0;
+    opacity: 1;
+    float: left;
+    padding: 60px 50px 40px 50px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 330px;
+  }
+  
+  .box.back {
+    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    top: -20px;
+    opacity: .8;
+    z-index: -1;
+  }
+  
+  .example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }  

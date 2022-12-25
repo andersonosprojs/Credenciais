@@ -1,0 +1,92 @@
+<div fxLayout="row" fxLayoutAlign="center" class="container">
+    <div fxLayout="row" fxLayoutAlign="center center" class="container2">
+        <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="start">
+            <mat-card-header fxFlex="100" fxLayout="row" fxLayoutAlign="center center" style="padding: 30px 30px 20px 20px;">
+                <mat-icon class="icon-header" fxLayout="row" fxLayoutAlign="start none">verified_user</mat-icon>
+                <span fxFlex="100" class="title-header" fxLayout="row" fxLayoutAlign="start center">Cadastro de Credencial</span>
+            </mat-card-header>    
+            <form [formGroup]="form" fxFlex="100">
+                <mat-card-content fxLayout="column" fxLayoutAlign="start">
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="10px" style="-webkit-text-fill-color: #3f51b5">
+                        <mat-form-field fxFlex="40" appearance="outline">
+                            <mat-label>Título</mat-label>
+                            <input matInput formControlName="titulo" name="titulo" class="inputs">
+                            <mat-error *ngIf="form.get('titulo')?.hasError('required')">
+                              Título é obrigatório
+                            </mat-error>
+                        </mat-form-field>        
+                
+                        <mat-form-field fxFlex="35" appearance="outline">
+                            <mat-label>Login</mat-label>
+                            <input matInput formControlName="login" name="login" class="inputs">
+                            <mat-error *ngIf="form.get('titulo')?.hasError('required')">
+                              Login é obrigatório
+                            </mat-error>
+                        </mat-form-field>        
+            
+                        <mat-form-field appearance="outline">
+                            <mat-label>Senha</mat-label>
+                            <input matInput formControlName="senha" name="senha" class="inputs">
+                            <mat-error *ngIf="form.get('titulo')?.hasError('required')">
+                              Senha é obrigatório
+                            </mat-error>
+                        </mat-form-field>            
+                    </div>         
+                    
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="10px" style="-webkit-text-fill-color: #3f51b5">
+                        <mat-form-field fxFlex="33" appearance="outline">
+                            <mat-label>Assinatura</mat-label>
+                            <input matInput formControlName="assinatura" name="assinatura" class="inputs">
+                        </mat-form-field>                        
+        
+                        <mat-form-field fxFlex="33" appearance="outline">
+                            <mat-label>Agência</mat-label>
+                            <input matInput formControlName="agencia" name="agencia" class="inputs">
+                        </mat-form-field>                        
+        
+                        <mat-form-field fxFlex="33" appearance="outline">
+                            <mat-label>Conta Corrente</mat-label>
+                            <input matInput formControlName="conta" name="conta" class="inputs">
+                        </mat-form-field>                                
+                    </div>
+        
+                    <div fxFlex="100" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="10px" style="-webkit-text-fill-color: #3f51b5">
+                        <mat-form-field fxFlex="33" appearance="outline">
+                            <mat-label>Usuario Aplicativo</mat-label>
+                            <input matInput formControlName="usuarioAplicativo" name="usuarioAplicativo" class="inputs">
+                        </mat-form-field>                        
+        
+                        <mat-form-field fxFlex="33" appearance="outline">
+                            <mat-label>Senha Aplicativo</mat-label>
+                            <input matInput formControlName="senhaAplicativo" name="senhaAplicativo" class="inputs">
+                        </mat-form-field>                        
+        
+                        <mat-form-field fxFlex="33" appearance="outline">
+                            <mat-label>Senha Cartão</mat-label>
+                            <input matInput formControlName="senhaCartao" name="senhaCartao" class="inputs">
+                        </mat-form-field>                        
+                    </div>
+
+                    <mat-form-field fxFlex="100" appearance="outline" style="-webkit-text-fill-color: #3f51b5">
+                        <mat-label>Pix</mat-label>
+                        <input matInput formControlName="pix" name="pix" class="inputs">
+                    </mat-form-field>                        
+
+                    <mat-form-field fxFlex="100" appearance="outline" style="-webkit-text-fill-color: #3f51b5">
+                        <mat-label>Url</mat-label>
+                        <input matInput formControlName="url" name="url" class="inputs">
+                    </mat-form-field>                        
+        
+                    <mat-form-field fxFlex="100" appearance="outline" style="-webkit-text-fill-color: #3f51b5">
+                        <mat-label>Observação</mat-label>
+                        <input matInput formControlName="observacao" name="observacao" class="inputs">
+                    </mat-form-field>                            
+                </mat-card-content>                
+                <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px" style="margin: 15px;">
+                    <button fxFlex="20" mat-button style="padding: 20px;" (click)="voltar()">Voltar</button>
+                    <button fxFlex="20" mat-button style="padding: 20px; background-color: #3f51b5; color: white;" (click)="salvar()">Salvar</button>    
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>
